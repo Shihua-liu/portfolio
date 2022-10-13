@@ -1,0 +1,608 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(font/Roboto-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    font-family: myFirstFont;
+    box-sizing: border-box;
+    /*opacity: 1.0;
+    background-image:  linear-gradient(#a5a5a5 8px, transparent 8px), linear-gradient(90deg, #a5a5a5 8px, transparent 8px), linear-gradient(#a5a5a5 4px, transparent 4px), linear-gradient(90deg, #a5a5a5 4px, #9b9b9b 4px);
+    background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
+    /* background-position: -8px -8px, -8px -8px, -4px -4px, -4px -4px;  */
+}
+
+:root {
+    --background-color: #eee;
+    --background-color-card: #0F3460;
+}
+
+
+/* navbar styling */
+
+/* dit is voor de spacing tussen H1 en de lijst */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #16213E;
+    color: white;
+    opacity: 1;
+}
+
+#navbar {
+    transition: top 0.3s;
+}
+
+.navbar h2 {
+    margin: 2rem;
+    font-size: 3rem;
+}
+
+#head-text {
+    margin-left: 3%;
+}
+
+
+/* lijst style uit zetten */
+
+li {
+    list-style: none;
+}
+
+/* aniimatie als je over heen hovered */
+
+li a {
+    display: block;
+    padding: 0.8rem;
+    background-color: transparent;
+    margin: 2rem;
+    transform: scale(1);
+    transition: 0.75s all ease;
+    border-left: 3px white solid;
+    cursor: pointer;
+}
+
+li a:hover {
+    display: block;
+    padding: 0.8px;
+    background-color: transparent;
+    color: gray;
+    /* margin: 20px; */
+    padding: 1rem;
+    transform: scale(1.1);
+}
+
+/* de lijst rechts */
+.nav-list {
+    float: right;
+    color: white;
+}
+
+/* de lijst van links naar rechts ipv boven naar onder */
+.nav-list ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+/* welcome foto */
+#welcome-text {
+    width: 0px;
+    height: auto;
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+.wrapper h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: lato;
+    font-weight: 900;
+    font-size: 5rem;
+    font-family: myFirstFont;
+}
+
+.box {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./image/me2.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#welcome-text {
+    z-index: 1;
+}
+
+
+/* start container */
+.container {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.container h1 {
+    margin: 0 auto;
+    padding: 4rem;
+    text-align: center;
+}
+
+
+
+
+
+/* home */
+.home {
+    text-align: left;
+    /* max-width: 100ch; */
+    padding: 4rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+#home h2 {
+    color: #0F3460;
+    font-size: 3.3rem;
+}
+
+.home img {
+    border-radius: 2.5rem;
+    width: 33%;
+    height: auto;
+}
+
+.home p {
+    font-size: 2rem;
+}
+
+.info-over-mij {
+    margin: 2rem;
+}
+
+.info-over-mij__text {
+    margin: 2rem 0rem;
+}
+
+
+
+
+/* skills */
+.skills-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 5rem;
+    min-height: 50vh;
+}
+
+.skill-cards {
+    width: 30%;
+    height: 20rem;
+    margin: 3rem 2rem;
+    border-radius: 5rem;
+    background: rgba(128, 128, 128);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.skill-desc {
+    font-size: 200%;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s, visibility .5s;
+}
+
+.skill-cards:hover {
+    background: rgba(128, 128, 128, 0.8);
+}
+
+.skill-cards:hover .skill-desc {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.--fa-style {
+    color: #0F3460;
+    font-size: 5rem;
+    transition: height 20rem .5s;
+    margin: 3rem;
+}
+
+
+
+
+
+.skills-txt {
+    text-align: center;
+    font-size: 3.3rem;
+}
+
+
+
+/* about me */
+.about-me {
+    text-align: center;
+}
+
+
+
+/* projects */
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.project>section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2rem;
+    
+}
+
+.project h2 {
+    font-size: 3.3rem;
+}
+
+
+.card {
+    width: 40rem;
+    height: 20rem;
+    background: var(--background-color-card);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 50vh;
+    margin: 2rem;
+    transition: 0.75s all ease-in-out;
+    position: relative;
+    
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+
+
+.card__figure {
+    height: 50%;
+    width: 100%;
+    padding: 2rem;
+}
+
+.card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card__section {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card__btn {
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 180%;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.modal {
+    width: 80vw;
+    height: 90vh;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    position: relative;
+    display: none;
+    
+}
+
+.modal__figure {
+    width: 100%;
+    height: 100%;
+    padding: 4rem;
+}
+
+.modal__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal__section {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal__heading {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 250%;
+    border-bottom: 0.5rem solid #0F3460;
+}
+
+.modal__text {
+    font-size: 150%;
+}
+
+.modal__link {
+    font-size: 150%;
+    transition: 0.75s all ease-in-out;
+    color: black;
+}
+
+.modal__link:hover {
+    transform: scale(1.1);
+    color: gray;
+
+}
+
+
+.modal__button {
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-weight: 500;
+    background: #16213E;
+    color: white;
+}
+
+.modal__button:hover {
+    cursor: pointer;
+    background: rgba(22, 33, 62, 0.8);
+}
+
+
+
+
+/* footer blijft beneden */
+footer {
+    margin-top: auto;
+    height: 100%;
+    background-color: #16213E;
+    color: white;
+    padding: 4rem;
+}
+
+/* footer opsplitsten */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* naam vergroten en centreren in de footer */
+.footer-naam {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.6rem;
+}
+
+
+
+.footer-nav {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+.footer-nav a {
+    margin: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.footer-nav a:hover {
+    color: gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.footer-socials a {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.footer-socials a:hover {
+    color: gray;
+    text-decoration: none;
+
+
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    display: none;
+
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: none;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: none;
+
+}
+
+
+
+@media screen and (max-width:68rem) {
+    .nav-list {
+        display: none;
+    }
+
+    #head-text {
+        text-align: center !important;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    #welcome-text span {
+        display: none;
+    }
+
+
+    .home {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .home img {
+        margin-top: 3rem;
+        width: 50%;
+        height: auto;
+    }
+
+
+    .skills {
+        margin-top: 6rem;
+    }
+
+    .skill-cards {
+        width: 45%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .skill-desc {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .all-card {
+        justify-content: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .project h2 {
+        font-size: 3.3rem;
+    }
+
+    .project>section {
+        display: flex;
+        justify-content: center;
+        margin: 2rem;
+    }
+
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .footer-nav {
+        align-items: center;
+    }
+
+    .footer-nav a {
+        font-size: 2rem;
+    }
+
+    .footer-naam {
+        margin: 4rem;
+    }
+
+    .footer-socials {
+        align-items: center;
+    }
+
+    .footer-socials a {
+        font-size: 2rem;
+    }
+}
