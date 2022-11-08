@@ -130,7 +130,7 @@ li a:hover {
     color: #fff;
     font-family: lato;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: myFirstFont;
 }
 
@@ -155,6 +155,7 @@ li a:hover {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .container h1 {
@@ -207,6 +208,12 @@ li a:hover {
 
 
 /* skills */
+
+.skills{
+    background: #fafeff;
+    padding: 2rem;
+}
+
 .skills-container {
     display: flex;
     flex-direction: row;
@@ -223,31 +230,25 @@ li a:hover {
     height: 20rem;
     margin: 3rem 2rem;
     border-radius: 5rem;
-    background: rgba(128, 128, 128);
+    background: #eee;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    border: #0F3460 0.1rem solid;
 }
 
 .skill-desc {
     font-size: 200%;
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
+    color: #0F3460;
     transition: opacity .5s, visibility .5s;
 }
 
-.skill-cards:hover {
+/* .skill-cards:hover {
     background: rgba(128, 128, 128, 0.8);
-}
+} */
 
-.skill-cards:hover .skill-desc {
-    visibility: visible;
-    opacity: 1;
-
-}
 
 .--fa-style {
     color: #0F3460;
@@ -280,7 +281,9 @@ li a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    min-height: 90vh;
+    background: #eee;
+    padding: 2rem;
 }
 
 .project>section {
@@ -289,7 +292,7 @@ li a:hover {
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 2rem;
-    
+
 }
 
 .project h2 {
@@ -308,7 +311,9 @@ li a:hover {
     margin: 2rem;
     transition: 0.75s all ease-in-out;
     position: relative;
-    
+    border-radius: 5rem;
+    padding: 2rem;
+
 }
 
 .card:hover {
@@ -320,7 +325,7 @@ li a:hover {
 
 
 .card__figure {
-    height: 50%;
+    height: 60%;
     width: 100%;
     padding: 2rem;
 }
@@ -332,12 +337,17 @@ li a:hover {
 }
 
 .card__section {
-    height: 50%;
+    height: 40%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+}
 
+.card__section--text {
+    color: white;
+    font-size: 170%;
 }
 
 .card__btn {
@@ -352,12 +362,10 @@ li a:hover {
 
 .modal {
     width: 80vw;
-    height: 90vh;
-    display: grid;
-    grid-template-rows: 50% 50%;
+    min-height: 90vh;
     position: relative;
     display: none;
-    
+
 }
 
 .modal__figure {
@@ -376,7 +384,6 @@ li a:hover {
     width: 100%;
     height: 100%;
     background: #eee;
-    padding: 4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -390,21 +397,29 @@ li a:hover {
 }
 
 .modal__text {
-    font-size: 150%;
+    font-size: 200%;
 }
 
 .modal__link {
     font-size: 150%;
+
+}
+
+.modal__section--links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__section--links a {
+    margin: 1rem;
     transition: 0.75s all ease-in-out;
-    color: black;
 }
 
-.modal__link:hover {
+.modal__section--links a:hover {
     transform: scale(1.1);
-    color: gray;
-
 }
-
 
 .modal__button {
     border: none;
@@ -515,7 +530,12 @@ footer {
 
 
 
-@media screen and (max-width:68rem) {
+@media screen and (max-width:62.5rem) {
+
+    .card {
+        width: 30rem;
+    }
+
     .nav-list {
         display: none;
     }
@@ -537,6 +557,10 @@ footer {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        padding: 0;
+    }
+    .home p{
+        font-size: 1.5rem;
     }
 
     .home img {
@@ -551,9 +575,10 @@ footer {
     }
 
     .skill-cards {
-        width: 45%;
+        width: 80%;
         opacity: 1;
         visibility: visible;
+        padding: 2rem;
     }
 
     .skill-desc {
@@ -569,6 +594,11 @@ footer {
         width: 80%;
     }
 
+    .card__section--text{
+        text-align: center;
+    }
+
+
     .project h2 {
         font-size: 3.3rem;
     }
@@ -577,6 +607,11 @@ footer {
         display: flex;
         justify-content: center;
         margin: 2rem;
+        min-height: 100vh;
+    }
+
+    .modal__text{
+        font-size: 150%;
     }
 
 
