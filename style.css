@@ -135,7 +135,7 @@ li a:hover {
 }
 
 .box {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./image/me2.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./image/me2.webp");
     width: 100%;
     height: 100vh;
     background-position: center;
